@@ -1,3 +1,48 @@
+body{
+	background-color: rgba(51, 51, 51, 1);
+	color: rgb(200, 200, 200);
+	border: 2px solid white;
+	padding: 0px 40px 00px;
+	max-width: 80%;
+	min-width: 20%;
+	margin: 20px auto 20px;
+	font-family: garamond;
+	font-weight: bold;
+	font-size: large;
+}
+
+/*I gave responsive a shot*/
+
+@media only screen and (max-width: 600px) {
+  .profile {
+    float: none;
+	width: 100%;
+  }
+  body{
+  	max-width: 70%;
+  }
+  #Duration {
+	display: block;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .profile {
+    float: right;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    max-width: 700px;
+  }
+}
+
+.profile{
+	padding: 3px;
+	border: 1px solid white;
+	margin: 5px;
+}
 
 .static h1 {
 	text-align: center;
@@ -5,27 +50,41 @@
 	font-family: garamond;
 	color: rgb(200, 200, 200);
 	font-weight: bolder;
+	font-size: 40px;
+	margin-bottom: -5px;
 }
 
 .nav{
+	padding: 0;
 	text-align: center;
 	list-style: none;
 }
 
 .nav li{
 	display: inline;
-	font-size: medium;
+	font-size: 90%;
+	padding-right: 5px;
+	border-right: 1px solid white;
 }
 
-img{
-	float:right;
-	padding: 3px;
-	border: 1px solid white;
-	margin: 5px;
+.nav li:last-child/*::after*/ {
+	/*content:" ";*/
+	border-right: none;
 }
 
-div h1 {
+a {
+/*	Hey i know you said not to use default tags but I 
+	think I can argue for the	exception with 
+	hyperlinks as I'd like them to be consistent 
+	across the page.*/	
+	font-family: 'Open Sans', sans-serif;
+	text-decoration: none;
+	color: rgb(0, 204, 153);
+}
+
+.PageTitle {
 	font-family: 'Lato', sans-serif;
+	font-size: 30px;
 }
 
 .sectiondiv{
@@ -33,29 +92,15 @@ div h1 {
 	margin: 30px auto 30px;
 }
 
-body{
-	background-color: rgba(51, 51, 51, 1);
-	color: rgb(200, 200, 200);
-	border: 2px solid white;
-	padding: 0px 40px 00px;
-	max-width: 45%;
-	margin: 20px auto 20px;
-	font-family: garamond;
-	font-weight: bold;
-	font-size: large;
-}
-
-a {
-	font-family: 'Open Sans', sans-serif;
-	text-decoration: none;
-	color: rgb(0, 204, 153);
-}
-
-h2 {
+.ResSection {
 	margin-top: 45px;
 	text-transform: uppercase;
 	font-family: 'Lato', sans-serif;
 	font-size: medium;
+}
+
+.JobBlock{
+	margin-bottom: 5%;
 }
 
 #JobTitle{
@@ -72,18 +117,9 @@ h2 {
 	font-size: small;
 }
 
-#EdCompany{
-
+#JobDesc{
+	display: block;
 }
-
-#EdDuration{
-
-}
-
-/*text::after{
-	Ya this works but considering it poor practice as if f*cks up the tag selector.
-	content: ",";
-}*/
 
 #JobTitle::after, #Company::after {
 	content:", ";
@@ -93,18 +129,18 @@ h2 {
 	content:" - ";
 }
 
-.nav li/*::after*/ {
-	/*font-family: 'Open Sans', sans-serif;
-	content:" | ";*/
-	padding-right: 7px;
-	border-right: 1px solid white;
-	padding-left: 4px;
+
+/*Unused tags but added for consistency*/
+
+#EdCompany{
+
 }
 
-.nav li:last-child/*::after*/ {
-	/*content:" ";*/
-	border-right: none;
+#EdDuration{
+
 }
+
+
 
 
 
